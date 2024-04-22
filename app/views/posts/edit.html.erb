@@ -1,0 +1,28 @@
+
+
+<div class="row mt-2">
+  <div class="col-4 offset-4">
+    <div class="card">
+      <div class="card-header">
+        <h1>Edit Post</h1>
+      </div>
+
+      <div class="card-body">
+        <%= form_for @post, url: "/posts/#{@post.id}" do |f| %>
+
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :body %>
+          <%= f.text_area :body, class: "form-control" %>
+        </div>
+
+        <%= f.submit "Update Post", class: "btn btn-primary mt-2" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

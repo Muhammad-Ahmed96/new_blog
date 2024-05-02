@@ -12,6 +12,8 @@ jobs:
           ruby-version: '3.3.0'
           bundler-cache: true
       - name: Running Test
+        run: gem install bundler
+        run: bundle install
         run: rails test
       # - run: bundle exec rake
       

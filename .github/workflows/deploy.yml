@@ -1,5 +1,6 @@
 name: Deploy Code
-on: push
+# workflow_dispatch is to run manually
+on: [push, workflow_dispatch]
 jobs:
   install:
     runs-on: ubuntu-latest

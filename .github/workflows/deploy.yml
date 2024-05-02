@@ -2,7 +2,7 @@ name: Deploy Code
 on: push
 jobs:
   install:
-    runs-on: unbunt-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get Code
         uses: action/checkout@v4

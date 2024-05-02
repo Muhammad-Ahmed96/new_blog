@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       - name: Installing Ruby
         uses: ruby/setup-ruby@v1
         with:

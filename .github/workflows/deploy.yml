@@ -11,5 +11,7 @@ jobs:
         with:
           ruby-version: '3.3.0'
           bundler-cache: true
+      - name: Running Test
+        run: rails test
       # - run: bundle exec rake
       

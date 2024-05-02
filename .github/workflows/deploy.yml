@@ -17,5 +17,18 @@ jobs:
         run: bundle install
       - name: Running Test
         run: bundle exec rails test
-      # - run: bundle exec rake
-      
+  
+  deploy:
+    - name: Get Code
+      uses: actions/checkout@v4
+    - name: Installing Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3.0'
+        bundler-cache: true
+    - name: Installing Bundler
+      run: gem install bundler
+    - name: Installing Gems
+      run: bundle install
+    - name: Running Test
+      run: echo "Deploying ..."

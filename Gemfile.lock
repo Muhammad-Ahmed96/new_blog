@@ -80,6 +80,7 @@ GEM
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     bigdecimal (3.1.7)
     bindex (0.8.1)
     bootsnap (1.18.3)
@@ -88,6 +89,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -263,6 +265,9 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
+    will_paginate-bootstrap-style (0.3.0)
+      will_paginate (~> 4.0, >= 4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.13)
@@ -276,8 +281,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt
   bootsnap
   bootstrap
+  cancancan
   capybara
   debug
   importmap-rails
@@ -293,6 +300,8 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate (~> 4.0)
+  will_paginate-bootstrap-style
 
 RUBY VERSION
    ruby 3.3.0p0

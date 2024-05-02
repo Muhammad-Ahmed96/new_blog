@@ -70,3 +70,5 @@ end
 
 gem 'bootstrap'
 gem 'sassc-rails'
+gem 'bcrypt'
+gem 'cancancan'

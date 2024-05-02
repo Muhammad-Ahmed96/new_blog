@@ -5,8 +5,9 @@ jobs:
     runs-on: unbunt-latest
     steps:
       - name: Get Code
-      - uses: action/checkout@v4
-      - uses: ruby/setup-ruby@v1
+        uses: action/checkout@v4
+      - name: Installing Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true

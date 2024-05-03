@@ -3,7 +3,7 @@ on:
   pull_request:
     types:
       - opened
-  action_dispatch:
+  workflow_dispatch:
 
 jobs:
   pull-request:

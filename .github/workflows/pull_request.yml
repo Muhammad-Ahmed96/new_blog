@@ -1,0 +1,24 @@
+name: Pull Request
+on:
+  pull_request:
+    types:
+      - opened
+  action_dispatch:
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting Code
+        uses: actions/checkout@v4
+      - name: Installing Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3.0'
+          bundler-cache: true
+      - name: Installing Bundler
+        run: gem install bundler
+      - name: Installing Gems
+        run: bundle install
+      - name: Running Test
+        run: bundle exec rails test

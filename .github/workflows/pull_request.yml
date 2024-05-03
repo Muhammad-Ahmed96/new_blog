@@ -3,7 +3,18 @@ on:
   pull_request:
     types:
       - opened
-  action_dispatch:
+    branches:
+      - main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'dev-**' # feature/new feature/new/button'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'dev-**' # feature/new feature/new/button'
+    path-ignores:
+      - '.github/workflows/*'
 
 jobs:
   pull-request:

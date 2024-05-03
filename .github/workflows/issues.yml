@@ -1,0 +1,8 @@
+name: Issue Opened
+on: issues
+jobs:
+  issues-open:
+    runs-on: ubuntu-latest
+    steps:
+      - name: New Issue opened
+        run: "echo ${{ github }}"

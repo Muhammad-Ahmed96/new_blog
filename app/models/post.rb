@@ -1,6 +1,8 @@
 
 
 class Post < ApplicationRecord
+  self.per_page = 2
+
   belongs_to :user
 
   # validates :title, presence: true

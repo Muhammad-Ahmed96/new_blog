@@ -1,6 +1,6 @@
 
 class PostsController < ApplicationController
-  load_and_authorize_resource except: [:index]
+  load_and_authorize_resource except: [:index, :search]
 
   def index
     @posts = Post.paginate(page: params[:page])
@@ -9,6 +9,15 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     # authorize! :new, @post
+  end
+  
+
+  def search
+    @param = params[:search]
+    @posts = Post.joins("join action_text_rich_texts as at ON posts.id = at.record_id AND at.record_type = 'Post'")
+    .where("title LIKE ? OR at.body LIKE ?", "%#{@param}%", "%#{@param}%")
+    .paginate(page: params[:page])
+    render 'index'
   end
 
   def create

@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   # get '/users', to: "users#index"
   # get "/" => "posts#index"
   root "posts#index"
-  resources :posts
+  resources :posts do 
+    collection do
+      get 'search' => "posts#search"
+    end
+  end
   get '/signup' => "registrations#new"
   post '/signup' => "registrations#create"
   get '/login' => "sessions#new"
